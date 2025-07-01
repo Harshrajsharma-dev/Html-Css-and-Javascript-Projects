@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce animation</title>
+    <style>
+        .background {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightcoral;
+            border-radius: 5px;
+            margin: 0px 0px;
+            margin-top: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            margin-top: 0px;
+            margin-left: 0px;
+            animation-name: HarshKaAnimation;
+            animation-duration: 15s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            transition-timing-function: cubic-bezier(0.3, 0.6, 0.4, 1);
+        }
+
+        @keyframes HarshKaAnimation {
+            0% {
+                transform: translateY(-210px);
+            }
+
+            5% {
+                transform: translateX(50px) translateY(280px);
+            }
+
+            10% {
+                transform: translateX(100px) translateY(-190px);
+            }
+
+            15% {
+                transform: translateX(150px) translateY(280px);
+            }
+
+            20% {
+                transform: translateX(200px) translateY(-170px);
+            }
+
+            25% {
+                transform: translateX(250px) translateY(280px);
+            }
+
+            30% {
+                transform: translateX(300px) translateY(-150px);
+            }
+
+            35% {
+                transform: translateX(350px) translateY(280px);
+            }
+
+            40% {
+                transform: translateX(400px) translateY(-130px);
+            }
+
+            45% {
+                transform: translateX(450px) translateY(280px);
+            }
+
+            50% {
+                transform: translateX(500px) translateY(-110px);
+            }
+            55% {
+                transform: translateX(550px) translateY(280px);
+            }
+            60% {
+                transform: translateX(600px) translateY(-90px);
+            }
+            65% {
+                transform: translateX(650px) translateY(280px);
+            }
+            70% {
+                transform: translateX(700px) translateY(-70px);
+            }
+            75% {
+                transform: translateX(750px) translateY(280px);
+            }
+            80% {
+                transform: translateX(800px) translateY(-50px);
+            }
+            85% {
+                transform: translateX(850px) translateY(280px);
+            }
+            90% {
+                transform: translateX(900px) translateY(-30px);
+            }
+            95% {
+                transform: translateX(950px) translateY(280px);
+            }
+            100% {
+                transform: translateX(1000px) translateY(-10px);
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="ball"></div>
+    </div>
+</body>
+
+</html>
