@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <nav class="login-nav">
+        <img src="Netflix-Logo-Streaming-Platform-765.png" alt="Netflix Logo" class="login-logo">
+    </nav>
+
+    <div class="login-divider"></div>
+
+    <main class="login-main">
+        <div class="login-box">
+            <h1>Enter your info to sign in</h1>
+            <p class="login-subtitle">Or get started with a new account.</p>
+
+            <div class="login-form">
+                <div class="input-wrapper">
+                    <input type="text" id="emailInput" placeholder=" " autocomplete="off">
+                    <label for="emailInput">Email or mobile number</label>
+                </div>
+
+                <button class="continue-btn">Continue</button>
+
+                <div class="get-help" onclick="toggleHelp()">
+                    <span>Get Help</span>
+                    <span class="help-arrow" id="helpArrow">&#8964;</span>
+                </div>
+
+                <div class="help-dropdown" id="helpDropdown">
+                    <a href="#">Forgot email or phone?</a>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <p class="recaptcha-text">
+                    This page is protected by Google reCAPTCHA to ensure you're not a bot. And cloned by <b>[ Harsh raj
+                        ].</b>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="login-footer">
+        <p class="footer-phone">Questions? Call <a href="tel:0008009191743">000-800-919-1743</a> (Toll-Free)</p>
+
+        <div class="footer-links">
+            <div class="footer-col">
+                <a href="#">FAQ</a>
+                <a href="#">Cookie Preferences</a>
+            </div>
+            <div class="footer-col">
+                <a href="#">Help Centre</a>
+                <a href="#">Corporate Information</a>
+            </div>
+            <div class="footer-col">
+                <a href="#">Terms of Use</a>
+            </div>
+            <div class="footer-col">
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+
+        <div class="footer-language">
+            <button class="lang-btn">🌐 English ▼</button>
+        </div>
+    </footer>
+
+    <script>
+        function toggleHelp() {
+            const dropdown = document.getElementById('helpDropdown');
+            const arrow = document.getElementById('helpArrow');
+            const isOpen = dropdown.classList.toggle('open');
+            arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
+
+</body>
+
+</html>
