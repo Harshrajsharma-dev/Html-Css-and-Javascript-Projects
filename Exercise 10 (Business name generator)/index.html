@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizName — Business Name Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <header>
+    <div class="logo">Business<span>NAME</span></div>
+    <div class="tag">// random_gen v1.0</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="label">YOUR BUSINESS NAME</p>
+      <div class="name-display">
+        <span id="business-name">——&nbsp;——&nbsp;——</span>
+        <div class="cursor-blink">|</div>
+      </div>
+      <div class="glow-bar"></div>
+    </section>
+
+    <button id="generate-btn" onclick="generate()">
+      <span class="btn-text">GENERATE</span>
+      <span class="btn-icon">⟳</span>
+    </button>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">WORD POOL</span>
+      </div>
+      <div class="divider">|</div>
+      <div class="stat">
+        <span class="stat-num">27</span>
+        <span class="stat-label">COMBINATIONS</span>
+      </div>
+      <div class="divider">|</div>
+      <div class="stat">
+        <span class="stat-num" id="gen-count">0</span>
+        <span class="stat-label">GENERATED</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-line"></div>
+    <p class="footer-credit">crafted by <a href="https://github.com/Harshrajsharmadev" target="_blank">@Harshrajsharmadev</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize count
+    let genCount = 0;
+    const originalGenerate = window.generate;
+    window.generate = function () {
+      genCount++;
+      document.getElementById("gen-count").textContent = genCount;
+
+      // Flash effect on button
+      const btn = document.getElementById("generate-btn");
+      btn.classList.add("active");
+      setTimeout(() => btn.classList.remove("active"), 200);
+
+      // Glitch effect on name
+      const nameEl = document.getElementById("business-name");
+      nameEl.classList.add("glitch");
+      setTimeout(() => nameEl.classList.remove("glitch"), 400);
+
+      // Call original generate
+      let rand = Math.random();
+      let first, second, third;
+
+      if (rand < 0.33) { first = "Crazy"; }
+      else if (rand < 0.66) { first = "Amazing"; }
+      else { first = "Fire"; }
+
+      rand = Math.random();
+      if (rand < 0.33) { second = "Engine"; }
+      else if (rand < 0.66) { second = "Foods"; }
+      else { second = "Garments"; }
+
+      rand = Math.random();
+      if (rand < 0.33) { third = "Bros"; }
+      else if (rand < 0.66) { third = "Limited"; }
+      else { third = "Hub"; }
+
+      document.getElementById("business-name").innerHTML = first + "&nbsp;" + second + "&nbsp;" + third;
+    };
+  </script>
+</body>
+</html>
