@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherFlow</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container">
+
+    <div class="glass-card search-card">
+      <div class="search-wrap">
+        <i class="fa-solid fa-location-dot search-icon"></i>
+        <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off" />
+        <button id="searchBtn"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="glass-card main-card" id="mainCard">
+      <div class="weather-top">
+        <div class="city-info">
+          <h1 class="city-name" id="cityName">--</h1>
+          <p class="date-time" id="dateTime">--</p>
+        </div>
+        <div class="weather-icon-wrap">
+          <div class="icon-blob"></div>
+          <i class="weather-icon" id="weatherIcon"></i>
+        </div>
+      </div>
+
+      <div class="temp-section">
+        <span class="temp-value" id="tempValue">--</span>
+        <div class="temp-unit-toggle">
+          <button class="unit-btn active" id="btnC">°C</button>
+          <button class="unit-btn" id="btnF">°F</button>
+        </div>
+      </div>
+
+      <p class="condition" id="condition">--</p>
+
+      <div class="divider"></div>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <i class="fa-solid fa-droplet"></i>
+          <span class="stat-label">Humidity</span>
+          <span class="stat-value" id="humidity">--%</span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-wind"></i>
+          <span class="stat-label">Wind</span>
+          <span class="stat-value" id="wind">-- km/h</span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-eye"></i>
+          <span class="stat-label">Visibility</span>
+          <span class="stat-value" id="visibility">-- km</span>
+        </div>
+        <div class="stat-chip">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span class="stat-label">Pressure</span>
+          <span class="stat-value" id="pressure">-- hPa</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-row">
+
+      <div class="glass-card mini-card">
+        <div class="mini-icon-wrap"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+        <span class="mini-label">Feels Like</span>
+        <span class="mini-val" id="feelsLike">--</span>
+      </div>
+
+      <div class="glass-card mini-card">
+        <div class="mini-icon-wrap"><i class="fa-solid fa-sun"></i></div>
+        <span class="mini-label">UV Index</span>
+        <span class="mini-val" id="uvIndex">--</span>
+      </div>
+
+      <div class="glass-card mini-card">
+        <div class="mini-icon-wrap"><i class="fa-solid fa-cloud-rain"></i></div>
+        <span class="mini-label">Precip.</span>
+        <span class="mini-val" id="precip">-- mm</span>
+      </div>
+
+    </div>
+
+    <div class="glass-card sun-card">
+      <div class="sun-section">
+        <i class="fa-solid fa-sunrise sun-ico"></i>
+        <div>
+          <span class="sun-label">Sunrise</span>
+          <span class="sun-time" id="sunrise">--:--</span>
+        </div>
+      </div>
+      <div class="sun-bar-wrap">
+        <div class="sun-track">
+          <div class="sun-progress" id="sunProgress"></div>
+          <div class="sun-dot" id="sunDot"></div>
+        </div>
+      </div>
+      <div class="sun-section right">
+        <div>
+          <span class="sun-label">Sunset</span>
+          <span class="sun-time" id="sunset">--:--</span>
+        </div>
+        <i class="fa-solid fa-sunset sun-ico"></i>
+      </div>
+    </div>
+
+    <div class="glass-card status-card hidden" id="statusCard">
+      <i class="fa-solid fa-triangle-exclamation status-icon" id="statusIcon"></i>
+      <p id="statusMsg">Loading...</p>
+    </div>
+
+    <p class="footer">Powered by Harshsharma-dev</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
