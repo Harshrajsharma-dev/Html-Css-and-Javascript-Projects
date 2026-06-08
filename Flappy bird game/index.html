@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="game-wrapper">
+  <canvas id="gameCanvas" width="480" height="640"></canvas>
+
+  <div class="overlay" id="startScreen">
+    <h1>🐦 Flappy Bird</h1>
+    <p>Press <kbd>Space</kbd> or Tap to flap</p>
+    <p style="color:#a78bfa;font-size:0.52rem;">Choose Difficulty</p>
+    <div class="level-select">
+      <button class="level-btn easy selected" data-level="easy">😎 Easy</button>
+      <button class="level-btn medium"        data-level="medium">🔥 Medium</button>
+      <button class="level-btn hard"          data-level="hard">💀 Hard</button>
+    </div>
+    <button id="startBtn">Start Game</button>
+  </div>
+
+
+  <div class="overlay hidden" id="gameOverScreen">
+    <h1>💥 Game Over</h1>
+    <p id="finalScore">Score: 0</p>
+    <p id="bestScore">Best: 0</p>
+    <p id="diffLabel" style="color:#a78bfa;font-size:0.5rem;"></p>
+    <div class="level-select">
+      <button class="level-btn easy selected" data-level2="easy">😎 Easy</button>
+      <button class="level-btn medium"         data-level2="medium">🔥 Medium</button>
+      <button class="level-btn hard"           data-level2="hard">💀 Hard</button>
+    </div>
+    <button id="restartBtn">Play Again</button>
+  </div>
+</div>
+
+<audio id="snd-flap"      src="wing.mp3"  preload="auto"></audio>
+<audio id="snd-collision" src="world.mp3" preload="auto"></audio>
+<audio id="snd-point"     src="point.mp3"  preload="auto"></audio>
+
+<script src="game.js"></script>
+</body>
+</html>
